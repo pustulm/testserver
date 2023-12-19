@@ -7,7 +7,7 @@ metadata:
   labels:
     app: nodejs-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nodejs-app
@@ -30,8 +30,9 @@ metadata:
 spec:
   selector:
     app: nodejs-app
-  type: NodePort
+  type: LoadBalancer
   ports:
-  - name: http
+  - protocol: TCP
     targetPort: 3000
     port: 80
+  
