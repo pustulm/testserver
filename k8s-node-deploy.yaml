@@ -19,13 +19,6 @@ spec:
       containers:
       - name: nodejs-app
         image: "michalp96/server:latest"
-        resources:
-            limits:
-              cpu: 100m
-              memory: 200Mi
-            requests:
-              cpu: 100m
-              memory: 200Mi
         ports:
           - containerPort: 3000
 ---
