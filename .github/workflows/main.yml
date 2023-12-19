@@ -9,18 +9,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Start minikube
-      uses: medyagh/setup-minikube@master
-    - name: Try the cluster !
-      run: kubectl get pods -A
-    - name: Build image
-      run: |
-          export SHELL=/bin/bash
-          eval $(minikube -p minikube docker-env)
-          echo -n "verifying images:"
-          docker images         
+      uses: medyagh/setup-minikube@master  
     - name: Deploy to minikube
       run:
-        kubectl apply -f k8s-node-app.yaml
+        kubectl apply -f k8s-node-deploy.yaml
+    - name: Try the cluster !
+      run: kubectl get pods -A   
     - name: Test service URLs
       run: |
           minikube service list
