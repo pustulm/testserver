@@ -5,7 +5,7 @@ on: push
 jobs:
   job1:
     runs-on: ubuntu-latest
-    name: build Node.js Docker Image and deploy to minikube
+    name: Deploy to minikube
     steps:
     - uses: actions/checkout@v2
     - name: Start minikube
@@ -13,13 +13,14 @@ jobs:
     - name: Deploy to minikube
       run:
         kubectl apply -f k8s-node-deploy.yaml
-    - name: Sleep for 30 seconds
+    - name: Sleep for 15 seconds
       uses: jakejarvis/wait-action@master
       with:
-        time: '60s'
+        time: '15s'
     - name: Try the cluster !
       run: kubectl get pods -A   
     - name: Test service URLs
       run: |
           minikube service list
           minikube service nodejs-app --url
+          curl $(minikube service nodejs-app --url)        
