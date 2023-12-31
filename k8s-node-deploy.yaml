@@ -20,7 +20,7 @@ spec:
       - name: nodejs-app
         image: "michalp96/server:latest"
         ports:
-          - containerPort: 3000
+          - containerPort: 3030
 ---
 apiVersion: v1
 kind: Service
@@ -33,6 +33,6 @@ spec:
   type: NodePort
   ports:
   - name: http
-    targetPort: 3000
+    targetPort: 3030
     port: 80
     
