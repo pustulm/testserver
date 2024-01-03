@@ -42,12 +42,11 @@ Also in future I want to add Prometheus and Grafana
   For CI I decied to use Github Action. My workflow, for now, will include creating a Docker Image on my DockerHub account. 
 
   
-  *-Deployment-*
+  *-Continuous Deployment-*
 
-
-  To deploy I use Kubernetes (Minikube). I created a deplyoment file which help me to creating deployment, pods and service on my minikube node.
+  For CD, I used similarly to CI, Github Actions. It's a simple workflow to deploy to minicube and then check if everything went according to plan.
 
 ### **-Future-**
- In the near future, he plans to implement grafane and prometheus by the end. I am currently in the process of working on it and the final touches are left. Also I plan to implement CD on AWS servers in exchange for the currently used minicube without CD.
+ In the near future, he plans to implement grafane and prometheus by the end. I am currently in the process of working on it and the final touches are left. Also I plan to implement CD on AWS servers in exchange for the currently used minikube.
 ### **-Summary-**
   This simple project was intended to allow me to become more familiar with DevOps technologies in use. Although I've already done a lot of this work in my previous projects, I think it's worth repeating as the basics are something that is needed for further development. New, relative to previous projects, is the use of Prometheus and Grafana. Most of the activities I performed came easily relative to previous projects, which is proof of my progress in DevOps skills.
